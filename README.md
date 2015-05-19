@@ -3,7 +3,8 @@ This app scans for Bluetooth Peripherals and connects via chat. No Wifi necessar
 
 
 # Screen Shot
-![ScreenShot](https://github.com/samuraipapa/GhostChat-iOS/blob/master/screen.png) 
+![ScreenShot](https://github.com/danaavesar/GhostChat-iOS/blob/master/horizontal_screen_shot.PNG)
+![ScreenShot](https://github.com/danaavesar/GhostChat-iOS/blob/master/vertical_Screen_shot.PNG)
 
 # Code Runs On:
 + iOS 8.3+
