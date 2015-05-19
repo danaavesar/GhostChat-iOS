@@ -10,7 +10,7 @@ import UIKit
 import CoreBluetooth
 
 
-class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate {
+class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralManagerDelegate,CBPeripheralDelegate , UITextFieldDelegate{
 
     // MARK: - Globals
     
@@ -47,6 +47,8 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
 
     @IBAction func sendButtonPressed(sender: UIButton) {
         advertiseNewName(myTextField.text)
+        myTextField.resignFirstResponder()
+
 
     }
     
@@ -377,17 +379,14 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         
-        return 2
+        return 1
         
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if section == 0 {
+      
             return cleanAndSortedChatArray.count
-        }else{
-            return cleanAndSortedArray.count
-        }
+
         
     }
     
@@ -436,6 +435,12 @@ class ViewController: UIViewController, CBPeripheralManagerDelegate, CBCentralMa
         
         
         
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        advertiseNewName(myTextField.text)
+        textField.resignFirstResponder()
+        return false
     }
 
     
